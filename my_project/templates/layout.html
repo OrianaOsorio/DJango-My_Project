@@ -1,0 +1,29 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+
+        <link rel="stylesheet" href="{% static 'css/materialize/css/materialize.min.css' %}">
+            
+        <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+        
+    </head>
+
+    <body>
+        <div class="site-container">
+            <nav>
+                <a href="{% url 'home' %}">Neuro Salud</a>
+                <a href="{% url 'course_list' %}">A cerca de la epilepsia</a>
+                <a href="{% url 'course_list' %}">Diagnóstico</a>
+            </nav>
+
+        
+            {% block content %}{% endblock %}
+            
+        </div>
+
+        
+    </body>
+</html>

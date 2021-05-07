@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block title %} Neuro Salud {% endblock%}
+
+{% block content %}
+
+<div class="cards">
+    {% for course in courses%}
+        <div class="card">
+            <header><a href="{% url 'course_detail' pk=course.pk %}">{{ course.title }}</header></a>
+                <div class="card-copy">
+                    {{ course.description.content}}
+                </div>
+        </div>
+    {% endfor %}
+
+</div>
+{% endblock content %}
